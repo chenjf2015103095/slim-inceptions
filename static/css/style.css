@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fbfe;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 30px;
+  color: #007dfc;
+  letter-spacing: 0.56px;
+  margin-top: 58px;
+  text-align: center;
+}
+.shootarea {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding: 0 100px;
+}
+.imgarea {
+  background: #ffffff;
+  border: 1px solid #2485fc;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#848c97;
+  font-size:20px;
+  letter-spacing:0.84px;
+}
+.shoot {
+  width: 800px;
+  height: 400px;
+}
+.imglist {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.imgitem {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  width: 800px;
+  height: 400px;
+  margin-right: 10px;
+}
+.imgitem>img{
+    width: 100%;
+    height: 100%;
+}
+.identification {
+  margin: 0 auto;
+  margin-top: 50px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    57deg,
+    #007ee5 0%,
+    #05a0ff 100%,
+    #5533ff 100%
+  );
+  border: 1px solid rgba(32, 53, 128, 0.16);
+  border-radius: 3px;
+  width: 800px;
+  height: 400px;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+}
+.result {
+  width: 600px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding:0 20px;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.item-title {
+  font-size: 14px;
+  letter-spacing: 0.58px;
+  line-height: 2;
+}
+.result-item,.suggest{
+    padding: 20px 0;
+}
+.result-item > .item-title {
+  color: #317feb;
+}
+.result-item {
+  border-bottom: 1px solid #cccccc;
+}
+.suggest-item > .item-title {
+  color: #f1b824;
+}
+.item {
+  list-style: none;
+  padding: 0 20px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.item span {
+  display: inline-block;
+  height: 100%;
+}

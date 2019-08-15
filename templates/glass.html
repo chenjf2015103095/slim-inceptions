@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AI证件识别</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.10/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery-1.11.3.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/drag.js') }}" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            AI证件识别系统V1.0
+        </div>
+        <div class="shootarea">
+            <div class="shoot mid-shot">
+                <div class="imgarea" id="midImg" @drop="drop($event)" @dragenter="dragenter($event)" @dragover="dragover($event)">
+                    直接拖入证件进行识别
+                </div>
+                <div class="imglist">
+                    <div class="imgitem" v-for="(v,k) in midImgList">
+                        <img :src="v.file.src" alt="">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="shoot close-shot">-->
+                <!--<div class="imgarea" id="closeImg" @drop="drop($event)" @dragenter="dragenter($event)" @dragover="dragover($event)">-->
+                    <!--请拖入车辆-->
+                    <!--<b>近景</b>照片-->
+                <!--</div>-->
+                <!--<div class="imglist">-->
+                    <!--<div class="imgitem" v-for="(v,k) in closeImgList">-->
+                        <!--<img :src="v.file.src" alt="">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="result" v-if="ai_message">
+        <div class="result-item">
+                <div class="item-title ">
+                    Case Result(AI)
+                </div>
+                <ul>
+                    <li class="item">
+                        <span class="item-ai-message">{{ai_message}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="suggest">
+                <div class="suggest-item">
+                    <div class="item-title">
+                        AI result
+                    </div>
+                    <ul>
+                        <li class="item">
+                            <span class="item-ai-result">{{ai_result}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div></div>
+        <div class="footer">
+            精友国际集团
+        </div>
+        <div class="loader" v-show="show">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</body>
+
+</html>
